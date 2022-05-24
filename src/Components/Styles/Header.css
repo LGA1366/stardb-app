@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    color: #fff;
+}
+
+.header__link {
+    display: flex;
+    text-decoration: none;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list__item {
+    margin-right: 40px;
+}
+
+.nav-list__item:last-child {
+    margin-right: 0;
+}
+
+.nav-list__link:hover {
+    color: #E2F063;
+}
