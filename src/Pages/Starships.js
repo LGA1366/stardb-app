@@ -1,9 +1,8 @@
 import React from 'react';
 import Select from "../Components/Select";
 import "./Styles/Starships.css";
-import img1 from "./../images/starships/img1.jpg";
-import img2 from "./../images/starships/img2.jpg";
-import img3 from "./../images/starships/img3.jpg";
+import StarshipsCard from "./../Components/StarshipsCard";
+import {NavLink} from "react-router-dom";
 
 const Starships = () => {
     return (
@@ -12,70 +11,44 @@ const Starships = () => {
                 <Select />
                 <ul className="starships-main__list list-reset">
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img1} alt="" className="starships-card__image"/>
-                                <ul className="starship-card__list list-reset">
-                                    <li className="starship-card__item">
-                                        <span className="name">Cost:</span>
-                                        <span className="cost-value">$2.000.000.000</span>
-                                    </li>
-                                    <li className="starship-card__item">
-                                        <span className="name">Name:</span>
-                                        <span className="name-value">Millenium Falcon</span>
-                                    </li>
-                                </ul>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/falcon" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img3.jpg")} nameValue="Millennium Falcon" costValue="2.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img2} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/deathstar" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img2.jpg")} nameValue="Death Star" costValue="950.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img3} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/imperial" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img1.jpg")} nameValue="Imperial Ship" costValue="2.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img1} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/imperial" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img1.jpg")} nameValue="Imperial Ship" costValue="950.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img3} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/deathstar" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img2.jpg")} nameValue="Death Star" costValue="50.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img2} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/falcon" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img3.jpg")} nameValue="Millenium Falcon" costValue="950.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img1} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/deathstar" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img2.jpg")} nameValue="Death Star" costValue="90.000.000.000"/>
+                        </NavLink>
                     </li>
                     <li className="starships-main__item">
-                        <a href="" className="starships-main__link">
-                            <article className="starships-card">
-                                <img src={img3} alt="" className="starships-card__image"/>
-                            </article>
-                        </a>
+                        <NavLink to="/starships/imperial" className="starships-main__link">
+                            <StarshipsCard img={require("./../images/starships/img1.jpg")} nameValue="Imperial Ship" costValue="950.000.000.000"/>
+                        </NavLink>
                     </li>
                 </ul>
             </main>

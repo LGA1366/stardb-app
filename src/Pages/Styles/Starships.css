@@ -30,7 +30,7 @@
 }
 
 .starships-main__item:not(:nth-child(3n)) {
-    margin-right: 72px;
+    margin-right: 65px;
 }
 
 .starships-main__item:nth-child(n+7):nth-child(-n+8) {
@@ -41,31 +41,4 @@
     display: block;
     width: 100%;
     height: 100%;
-}
-
-.starships-card {
-    padding: 19px 19px 30px 19px;
-}
-
-.starships-card__image {
-    margin-bottom: 30px;
-}
-
-.starship-card__item {
-    display: flex;
-    justify-content: space-between;
-}
-
-.name {
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 140%;
-    color: #1E1E1E;
-}
-
-.name-value, .cost-value {
-    font-weight: 500;
-    font-size: 27px;
-    line-height: 140%;
-    color: #1E1E1E;
 }
