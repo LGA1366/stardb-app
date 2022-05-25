@@ -1,0 +1,27 @@
+.planets-card {
+    padding: 19px 19px 30px 19px;
+}
+
+.planets-card__image {
+    margin-bottom: 30px;
+}
+
+.planets-card__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 140%;
+    color: #1E1E1E;
+}
+
+.name-value, .cost-value {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 140%;
+    color: #1E1E1E;
+}

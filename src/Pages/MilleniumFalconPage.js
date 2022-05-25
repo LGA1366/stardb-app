@@ -10,11 +10,26 @@ const MilleniumFalconPage = () => {
             <div className="ships-page__container">
                 <img src={falcon} className="ships-page__img" alt="falcon"/>
                 <ul className="ships-page__list list-reset">
-                    <li className="ships-page__item"></li>
-                    <li className="ships-page__item"></li>
-                    <li className="ships-page__item"></li>
-                    <li className="ships-page__item"></li>
-                    <li className="ships-page__item"></li>
+                    <li className="ships-page__item">
+                        <span className="ships-page__name">Model:</span>
+                        <span className="ships-page__value">YT-1300 light freighter</span>
+                    </li>
+                    <li className="ships-page__item">
+                        <span className="ships-page__name">Model:</span>
+                        <span className="ships-page__value">Millennium Falcon</span>
+                    </li>
+                    <li className="ships-page__item">
+                        <span className="ships-page__name">Length:</span>
+                        <span className="ships-page__value">34.37</span>
+                    </li>
+                    <li className="ships-page__item">
+                        <span className="ships-page__name">Cost:</span>
+                        <span className="ships-page__value">$30.000.000.000</span>
+                    </li>
+                    <li className="ships-page__item">
+                        <span className="ships-page__name">Created:</span>
+                        <span className="ships-page__value">12.12.2012</span>
+                    </li>
                 </ul>
                 <p className="ships-page__descr">
                     Lorem ipsum dolor sit amet, consectetuer
@@ -30,7 +45,7 @@ const MilleniumFalconPage = () => {
                     Nulla consequat massa quis enim
                 </p>
             </div>
-            <NavLink to="/starships">home</NavLink>
+            <NavLink to="/starships" className="to-ships-btn">to Starships</NavLink>
         </article>
     );
 };

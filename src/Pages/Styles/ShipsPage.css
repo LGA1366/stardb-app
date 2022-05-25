@@ -14,19 +14,55 @@
 .ships-page__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 47px;
     grid-row-gap: 80px;
+    align-items: center;
 }
 
 .ships-page__img {
     grid-area: 1 / 1 / 2 / 2;
+    border-radius: 15px;
 }
 
 .ships-page__list {
     grid-area: 1 / 2 / 2 / 3;
 }
 
+.ships-page__item {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.ships-page__item:last-child {
+    margin-bottom: 0;
+}
+
+.ships-page__name {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 140%;
+    color: #fff;
+}
+
+.ships-page__value {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 140%;
+    color: #fff;
+}
+
 .ships-page__descr {
+    margin-bottom: 45px;
     grid-area: 2 / 1 / 3 / 3;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 140%;
+    color: #fff;
+}
+
+.to-ships-btn {
+
+    color: #E2F063;
 }
