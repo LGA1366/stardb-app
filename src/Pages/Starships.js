@@ -1,55 +1,105 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Select from "../Components/Select";
 import "./Styles/Starships.css";
 import StarshipsCard from "./../Components/StarshipsCard";
 import {NavLink} from "react-router-dom";
 
+const starshipsData = [
+    {
+        id : 0,
+        img: require("../images/starships/img3.jpg"),
+        starshipsName: "Millenium Falcon",
+        cost: "2.000.000.000",
+        linkTo: "/starships/falcon"
+    },
+    {
+        id : 1,
+        img:require( "../images/starships/img2.jpg"),
+        starshipsName: "Death Star",
+        cost: "950.000.000",
+        linkTo: "/starships/deathstar"
+    },
+    {
+        id : 2,
+        img:require( "../images/starships/img1.jpg"),
+        starshipsName: "Imperial Ship",
+        cost: "1.000.000.000",
+        linkTo: "/starships/imperial"
+    },
+    {
+        id : 3,
+        img:require( "../images/starships/img3.jpg"),
+        starshipsName: "Millenium Falcon",
+        cost: "2.000.000.000",
+        linkTo: "/starships/falcon"
+    },
+    {
+        id : 4,
+        img: require("../images/starships/img1.jpg"),
+        starshipsName: "Imperial Ship",
+        cost: "1.000.000.000",
+        linkTo: "/starships/imperial"
+    },
+    {
+        id : 6,
+        img: require("../images/starships/img2.jpg"),
+        starshipsName: "Death Star",
+        cost: "950.000.000",
+        linkTo: "/starships/deathstar"
+    },
+    {
+        id : 6,
+        img: require("../images/starships/img3.jpg"),
+        starshipsName: "Millenium Falcon",
+        cost: "2.000.000.000",
+        linkTo: "/starships/falcon"
+    },
+    {
+        id : 7,
+        img: require("../images/starships/img1.jpg"),
+        starshipsName: "Imperial Ship",
+        cost: "2.000.000.000",
+        linkTo: "/starships/imperial"
+    },
+];
+
+
+
+
 const Starships = () => {
+    const [data, setData] = useState([]);
+    const [sortType, setSortType] = useState('starshipsName');
+
+    useEffect(() => {
+        const sortArray = type => {
+            const types = {
+                name: 'starshipsName',
+                cost: 'cost'
+            };
+            const sortProperty = types[type];
+            const sorted = [...starshipsData].sort((a, b) => (a[sortProperty] < b[sortProperty] ? 1 : -1));
+            setData(sorted);
+        };
+
+        sortArray(sortType);
+    }, [sortType]);
     return (
+
             <main className="starships-main container">
                 <h2 className="starships-main__title">Starships</h2>
-                <Select />
+                <Select op1="starshipsName" op2="cost" onChange={(e) => setSortType(e.target.value)}/>
                 <ul className="starships-main__list list-reset">
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/falcon" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img3.jpg")} nameValue="Millennium Falcon" costValue="2.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/deathstar" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img2.jpg")} nameValue="Death Star" costValue="950.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/imperial" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img1.jpg")} nameValue="Imperial Ship" costValue="2.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/imperial" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img1.jpg")} nameValue="Imperial Ship" costValue="950.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/deathstar" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img2.jpg")} nameValue="Death Star" costValue="50.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/falcon" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img3.jpg")} nameValue="Millenium Falcon" costValue="950.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/deathstar" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img2.jpg")} nameValue="Death Star" costValue="90.000.000.000"/>
-                        </NavLink>
-                    </li>
-                    <li className="starships-main__item">
-                        <NavLink to="/starships/imperial" className="starships-main__link">
-                            <StarshipsCard img={require("./../images/starships/img1.jpg")} nameValue="Imperial Ship" costValue="950.000.000.000"/>
-                        </NavLink>
-                    </li>
+
+                        {
+                            starshipsData.map( starship => (
+                                <li className="starships-main__item">
+                                    <NavLink to={starship.linkTo} className="starships-main__link">
+                                        <StarshipsCard img={starship.img} nameValue={starship.starshipsName} costValue={starship.cost}/>
+                                    </NavLink>
+                                </li>
+                                )
+                            )
+                        }
                 </ul>
             </main>
     );
