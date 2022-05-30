@@ -8,7 +8,7 @@ const StarshipsCard = (props) => {
             <ul className="starship-card__list list-reset">
                 <li className="starship-card__item">
                     <span className="name">Cost:</span>
-                    <span className="cost-value"> $ {props.costValue}</span>
+                    <span className="cost-value"> $ {props.costValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
                 </li>
                 <li className="starship-card__item">
                     <span className="name">Name:</span>
