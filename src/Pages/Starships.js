@@ -75,8 +75,7 @@ const Starships = () => {
                 cost: 'cost'
             };
             const sortProperty = types[type];
-            console.log(types[type]);
-            const sorted = [...starshipsData].sort((a, b) => (a[sortProperty] < b[sortProperty] ? -1 : 1));
+            const sorted = [...starshipsData].sort((a, b) => (a[sortProperty] > b[sortProperty] ? -1 : 1));
             setData(sorted);
         };
 
