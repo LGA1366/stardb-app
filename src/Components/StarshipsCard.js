@@ -1,11 +1,22 @@
 import React from 'react';
 import "./Styles/StarshipsCard.css";
-import Loader from "./Loader";
 import {useState, useEffect} from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 const StarshipsCard = (props) => {
-const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        setLoading(true);
+        const img = document.querySelectorAll(".starships-card__image");
+        let imageEl;
+        img.forEach(el => {
+           return imageEl = el;
+        });
+        console.log(imageEl.complete);
+        if (imageEl.complete === true) {
+            setLoading(false);
+        }
+    },[]);
     return (
         <article className="starships-card">
             { loading ? <ClipLoader /> : <img src={props.img} alt="" className="starships-card__image"/>}

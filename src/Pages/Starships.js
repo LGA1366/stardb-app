@@ -87,7 +87,6 @@ const Starships = () => {
                 <h2 className="starships-main__title">Starships</h2>
                 <Select op1="name" op2="cost" onChange={(e) => setSortType(e.target.value)}/>
                 <ul className="starships-main__list list-reset">
-
                         {
                             data.map( starship => (
                                 <li className="starships-main__item">
